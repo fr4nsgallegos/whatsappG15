@@ -26,9 +26,9 @@ class _TabbarDinamicoPageState extends State<TabbarDinamicoPage>
         title: Text("Tab bar dinámico"),
         bottom: TabBar(
           controller: tabController,
-          tabs: titulos
-              .map((elemento) => Center(child: Text(elemento)))
-              .toList(),
+          tabs: titulos.map((elemento) {
+            return Center(child: Text(elemento));
+          }).toList(),
         ),
       ),
       body: TabBarView(
