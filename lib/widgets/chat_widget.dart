@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class ChatWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: CircleAvatar(
-        backgroundColor: Colors.red,
-        radius: 28,
-        backgroundImage: NetworkImage(
-          "https://images.pexels.com/photos/4329745/pexels-photo-4329745.jpeg",
+      leading: SizedBox(
+        width: 50,
+        height: 50,
+        child: CachedNetworkImage(
+          imageUrl:
+              "https://images.pexels.com/photos/4329745/pexels-photo-4329745.jpeg",
+          imageBuilder: (context, imageProvider) =>
+              CircleAvatar(backgroundImage: imageProvider),
+          progressIndicatorBuilder: (context, url, progress) => Center(
+            child: CircularProgressIndicator(
+              color: Colors.green,
+              value: progress.progress,
+              strokeWidth: 2,
+            ),
+          ),
         ),
       ),
       title: Text("Nombre de la persona"),
