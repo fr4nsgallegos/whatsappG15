@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappg15/tabs/camera_tab.dart';
+import 'package:whatsappg15/tabs/chats_tab.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+      initialIndex: 1,
       length: 4,
       child: Scaffold(
         appBar: AppBar(
@@ -24,6 +27,7 @@ class HomePage extends StatelessWidget {
             labelColor: Colors.white,
             indicatorWeight: 4,
             unselectedLabelColor: Colors.grey,
+
             tabs: [
               Tab(icon: Icon(Icons.camera_alt)),
               Tab(text: "Chats"),
@@ -31,6 +35,14 @@ class HomePage extends StatelessWidget {
               Tab(text: "Calls"),
             ],
           ),
+        ),
+        body: TabBarView(
+          children: [
+            CameraTab(),
+            ChatsTab(),
+            Center(child: Text("3")),
+            Center(child: Text("4")),
+          ],
         ),
       ),
     );
