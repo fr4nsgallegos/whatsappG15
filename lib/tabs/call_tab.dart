@@ -12,7 +12,6 @@ class CallTab extends StatelessWidget {
         CallItemListile(),
         CallItemListile(),
         CallItemListile(),
-        CallItemListile(),
       ],
     );
   }

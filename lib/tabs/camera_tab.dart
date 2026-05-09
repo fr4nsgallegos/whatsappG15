@@ -7,7 +7,13 @@ class CameraTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [Text("Cameraaaa")],
+      children: [
+        Text("Cameraaaa"),
+        Text(
+          "Texto con una fuente cargada desde local, asset font",
+          style: TextStyle(fontFamily: "Playwrite", fontSize: 30),
+        ),
+      ],
     );
   }
 }
