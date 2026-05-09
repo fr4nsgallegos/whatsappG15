@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappg15/tabs/call_tab.dart';
 import 'package:whatsappg15/tabs/camera_tab.dart';
 import 'package:whatsappg15/tabs/chats_tab.dart';
 import 'package:whatsappg15/tabs/status_tab.dart';
@@ -38,12 +39,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
         body: TabBarView(
-          children: [
-            CameraTab(),
-            ChatsTab(),
-            StatusTab(),
-            Center(child: Text("4")),
-          ],
+          children: [CameraTab(), ChatsTab(), StatusTab(), CallTab()],
         ),
       ),
     );
